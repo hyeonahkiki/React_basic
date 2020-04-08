@@ -1,4 +1,29 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
+//styled사용하기. styled태그이름(태그 뭐든지 됨)
+// const RedH1 = styled.h1`
+//   color: red;
+// `;
+
+// const BlueButton = styled.button`
+//   background-color: blue;
+//   color: white;
+// `;
+
+// components단위로 css를 주기가 편함
+const CountWrapper = styled.div`
+  padding: 3rem;
+  h1 {
+    color: blue;
+  }
+  button {
+    color: green;
+  }
+  .title {
+    font-weight: bold;
+  }
+`;
 
 function Counter() {
   //useState(기본값), const[우리가 쓸 변수, 변수를 바꾸는 함수]
@@ -12,11 +37,11 @@ function Counter() {
     setNumber(number - 1);
   };
   return (
-    <>
-      <div> 카운터 </div> <h1> {number} </h1>{" "}
+    <CountWrapper>
+      <div className="title"> 카운터 </div> <h1> {number} </h1>{" "}
       <button onClick={onIncrease}> +1 </button>{" "}
       <button onClick={onDecrease}> -1 </button>
-    </>
+    </CountWrapper>
   );
 }
 
