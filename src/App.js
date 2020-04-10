@@ -7,6 +7,7 @@ import StoreCat from "./components/storecat";
 import Counter2 from "./components/counter2";
 import { ThemeProvider } from "styled-components";
 import theme from "./styles/theme";
+import Chart from "./components/chart";
 
 //Switch : java switch문같은 느낌
 //Route path="경로입력" component="보여줄 components"
@@ -22,6 +23,7 @@ function App() {
           <Route path="/cat" component={Cat} />
           <Route path="/storecat" component={StoreCat} />
           <Route path="/counter2" component={Counter2} />
+          <Route path="/chart" component={Chart} />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>

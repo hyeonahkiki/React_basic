@@ -28,6 +28,9 @@ function Nav() {
         <li>
           <StyledLink to="/cat">캣</StyledLink>
         </li>
+        <li>
+          <StyledLink to="/chart">차트</StyledLink>
+        </li>
       </StyledUl>
     </div>
   );
