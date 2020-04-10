@@ -3,6 +3,10 @@ import Counter from "./components/counter";
 import Cat from "./components/cat";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav";
+import StoreCat from "./components/storecat";
+import Counter2 from "./components/counter2";
+import { ThemeProvider } from "styled-components";
+import theme from "./styles/theme";
 
 //Switch : java switch문같은 느낌
 //Route path="경로입력" component="보여줄 components"
@@ -10,13 +14,17 @@ import Nav from "./components/nav";
 // BrowserRouter :
 function App() {
   return (
-    <BrowserRouter>
-      <Nav />
-      <Switch>
-        <Route path="/" component={Counter} exact />
-        <Route path="/cat" component={Cat} />
-      </Switch>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Nav />
+        <Switch>
+          <Route path="/" component={Counter} exact />
+          <Route path="/cat" component={Cat} />
+          <Route path="/storecat" component={StoreCat} />
+          <Route path="/counter2" component={Counter2} />
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

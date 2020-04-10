@@ -3,6 +3,9 @@ import { observable, decorate } from "mobx";
 
 class Catstore {
   url = "스토어에 있는 URL입니다.";
+  constructor(root) {
+    this.root = root;
+  }
 }
 
 // 클래스를 데코레이터처럼 사용 @observable

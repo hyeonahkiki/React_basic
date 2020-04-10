@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "./image";
 
 function Cat() {
   //배열을 분해. 이름은 상관없음
@@ -17,12 +18,15 @@ function Cat() {
         setUrl(data.message);
         console.log(data);
       })
+      // 화면ㅇ 가장 처음 렌더링 될때만 실행되고 업데이트 할 경우
+      // 실행할 필요가 없는 경우 함수 두번째 파라미터에 빈배열
       .catch((res) => console.log("error"));
   }, []);
   return (
     <>
       <div>cat API</div>
       <div>받아온 url : {url}</div>
+      <Image catUrl={url} name="댕댕이" />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+// import { inject } from "mobx-react";
 
 //styled사용하기. styled태그이름(태그 뭐든지 됨)
 // const RedH1 = styled.h1`
@@ -15,7 +16,7 @@ import styled from "styled-components";
 const CountWrapper = styled.div`
   padding: 3rem;
   h1 {
-    color: blue;
+    color: ${(props) => props.theme.mainColor};
   }
   button {
     color: green;
@@ -37,13 +38,15 @@ function Counter() {
     setNumber(number - 1);
   };
   return (
-    <CountWrapper>
+    <CountWrapper abs="1">
       <div className="title"> 카운터 </div> <h1> {number} </h1>{" "}
       <button onClick={onIncrease}> +1 </button>{" "}
       <button onClick={onDecrease}> -1 </button>
+      {/* <h1>{url}</h1> */}
     </CountWrapper>
   );
 }
 
 // 내보내줘야 쓸 수 있다.
 export default Counter;
+// export default inject("catStore")(Counter);
